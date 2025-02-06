@@ -66,6 +66,7 @@ flutter:
     - assets/icons/ringing.png
     - assets/icons/history.png
     - assets/icons/user.png
+    - assets/icons/bookmark.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

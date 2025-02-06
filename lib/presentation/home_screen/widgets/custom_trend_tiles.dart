@@ -14,10 +14,11 @@ class CustomTrendingTiles extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height * .26,
       width: MediaQuery.of(context).size.width * .610,
+     
       decoration: BoxDecoration(
           border: Border.all(color: kGreyColor),
-          borderRadius: BorderRadius.circular(15)),
-      child: Column(
+          borderRadius: BorderRadius.circular(11)),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
@@ -76,13 +77,14 @@ class CustomTrendingTiles extends StatelessWidget {
           ),
           Gap(20),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(right: 8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(),
                 Container(
-                  height: MediaQuery.of(context).size.height * .04,
+                  height: 40,
+                  //height: MediaQuery.of(context).size.height * .04,
                   width: MediaQuery.of(context).size.width * .16,
                  decoration: BoxDecoration(color: kblueColor,borderRadius: BorderRadius.circular(8)),
                  child: Center(child: Text("Apply",style: GoogleFonts.roboto(color: kWhiteColor,fontWeight: FontWeight.bold),),),

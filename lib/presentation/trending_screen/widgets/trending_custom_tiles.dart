@@ -3,29 +3,39 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/colors.dart';
+import '../../other/green_contanier.dart';
 
-class CustomTrendingTiles extends StatelessWidget {
-  const CustomTrendingTiles({
+class TrendingCustomTiles extends StatelessWidget {
+  const TrendingCustomTiles({
+    required this.jobTitle,
     super.key,
   });
-
+  final String jobTitle;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * .30,
-      width: MediaQuery.of(context).size.width * .610,
-     
+      height: 190,
+      width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-          border: Border.all(color: kGreyColor),
-          borderRadius: BorderRadius.circular(11)),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+        borderRadius: BorderRadius.circular(5),
+        border: Border.all(color: kGreyColor),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
               Padding(
                 padding: const EdgeInsets.all(11.0),
-                child: CircleAvatar(backgroundColor: kGreyColor,  
-                  radius: 25, child: Center(child: Image.asset("assets/icons/user.png",scale: 23,),),
+                child: CircleAvatar(
+                  backgroundColor: kGreyColor,
+                  radius: 25,
+                  child: Center(
+                    child: Image.asset(
+                      "assets/icons/user.png",
+                      scale: 23,
+                    ),
+                  ),
                 ),
               ),
 
@@ -69,28 +79,26 @@ class CustomTrendingTiles extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Flexible(
-                child: Text(
-              "Senior Sales Relationship Manager",
-              style: GoogleFonts.aBeeZee(
-                  fontSize: 18, fontWeight: FontWeight.bold),
-            )),
-          ),
-          Gap(20),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(),
-                Container(
-                  height: 40,
-                  //height: MediaQuery.of(context).size.height * .04,
-                  width: MediaQuery.of(context).size.width * .16,
-                 decoration: BoxDecoration(color: kblueColor,borderRadius: BorderRadius.circular(8)),
-                 child: Center(child: Text("Apply",style: GoogleFonts.roboto(color: kWhiteColor,fontWeight: FontWeight.bold),),),
+                Text(
+                  jobTitle,
+                  style: GoogleFonts.aBeeZee(
+                      fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                Text("Mumbai, Maharastra"),
+                Gap(5),
+                Row(
+                  children: [
+                    greenContainer(text: "Full-time", height: 25, width: 100),
+                    Gap(10),
+                    greenContainer(
+                        text: "No Degree Mentioned", height: 25, width: 150)
+                  ],
                 )
               ],
-            ),
+            )),
           ),
         ],
       ),

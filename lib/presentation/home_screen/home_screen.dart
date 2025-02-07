@@ -16,37 +16,26 @@ class HomeScreen extends StatelessWidget {
         title: SizedBox(
             width: 130, child: Image.asset("assets/icons/home_logo.png")),
         actions: [
-          Container(
+          CustomContainer(
             height: 40,
-            // height: MediaQuery.of(context).size.height * .057,
             width: 40,
-            //width: MediaQuery.of(context).size.width * .12,
-            decoration: BoxDecoration(
-                border: Border.all(color: kGreyColor),
-                borderRadius: BorderRadius.circular(14)),
-            child: Center(
-              child: SizedBox(
-                  height: MediaQuery.of(context).size.height * .03,
-                  child: Image.asset("assets/icons/ringing.png")),
-            ),
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width * .04,
           )
         ],
       ),
-      //---       app bar
       body: SingleChildScrollView(
         child: Column(
           children: [
             //trending title
             CustomHeading(
               heading: "On Trending",
+              isTrending: true,
             ),
             Gap(10),
             SizedBox(
               height: 220,
-              // height: MediaQuery.of(context).size.height * .29 ,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
@@ -59,19 +48,39 @@ class HomeScreen extends StatelessWidget {
                 separatorBuilder: (context, index) => Gap(10),
               ),
             ),
-            CustomHeading(heading: "Recommendations"), Gap(10),
+            CustomHeading(
+              heading: "Recommendations",
+              isTrending: false,
+            ),
+            Gap(10),
             CustomRecommendTile(),
             Gap(10),
             CustomRecommendTile(),
             Gap(10),
             CustomRecommendTile()
-            // SizedBox(height: 500,
-            //   child: ListView.separated(itemBuilder: (context, index) {
-            //     return CustomRecommendTile();
-            //   }, separatorBuilder: (context, index) => Gap(10), itemCount: 5),
-            // )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CustomContainer extends StatelessWidget {
+  const CustomContainer({super.key, required this.height, required this.width});
+  final double height;
+  final double width;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 40,
+      width: 40,
+      decoration: BoxDecoration(
+          border: Border.all(color: kGreyColor),
+          borderRadius: BorderRadius.circular(14)),
+      child: Center(
+        child: SizedBox(
+            height: MediaQuery.of(context).size.height * .03,
+            child: Image.asset("assets/icons/ringing.png")),
       ),
     );
   }

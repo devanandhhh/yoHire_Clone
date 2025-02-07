@@ -1,8 +1,9 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:yohire_clone/presentation/splash_screen/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(DevicePreview(builder: (context) => MyApp(),enabled: true,));
 }
 
 class MyApp extends StatelessWidget {

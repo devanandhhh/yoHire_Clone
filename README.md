@@ -1,16 +1,6 @@
 # yohire_clone
 
-A new Flutter project.
+A UI clone of the Yohire app built for a machine test, focusing on design accuracy. Some logos were taken via screenshots for better visual representation.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Completed 3 screen 
+-> home Screen , Trending screen, and reconnedations screen

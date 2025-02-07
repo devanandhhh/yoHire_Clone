@@ -12,3 +12,5 @@ A UI clone of the Yohire app built for a machine test, focusing on design accura
 
  ## Hosted in Git Hub
  https://devanandhhh.github.io/
+
+ I hosted the application on GitHub, but unfortunately, it is not fully working. There is a small mistake on the trending page.
